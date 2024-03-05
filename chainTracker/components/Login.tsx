@@ -23,6 +23,8 @@ const LoginScreen = () => {
         secureTextEntry
         onChangeText={nextValue => setPassword(nextValue)}
         style={{ marginVertical: 5 }}
+
+        
       />
       <Button style={{ marginVertical: 5 }} onPress={() => console.log(email, password)}>
         LOGIN
