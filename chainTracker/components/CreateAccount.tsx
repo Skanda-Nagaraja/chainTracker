@@ -23,7 +23,7 @@ const LoginScreen = () => {
             <Input
                 value={name}
                 label='Name'
-                placeholder='Enter your name'
+                placeholder='name'
                 onChangeText={nextValue => setName(nextValue)}
                 style={{ marginVertical: 5 }}
             />
