@@ -1,19 +1,26 @@
+// src/components/CreateAccount.tsx
 import React, { useState } from 'react';
-import * as eva from '@eva-design/eva';
 import { ApplicationProvider, Layout, Input, Button, Text } from '@ui-kitten/components';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { firebaseAuth } from '../config/firebase';
 import { Alert } from 'react-native';
 
-const CreateAccount = () => {
+const CreateAccountScreen = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const handleLogin = () => {
-        if (password === confirmPassword) {
-            console.log('Logging in with:', email, password);
-        } else {
+    const handleCreateAccount = async () => {
+        if (password !== confirmPassword) {
             Alert.alert('Error', 'Passwords do not match');
+            return;
+        }
+        try {
+            await createUserWithEmailAndPassword(firebaseAuth, email, password);
+            console.log('User account created & signed in!');
+        } catch (error) {
+            console.error('Account creation failed', error);
         }
     };
 
@@ -24,14 +31,14 @@ const CreateAccount = () => {
                 value={name}
                 label='Name'
                 placeholder='Enter your name'
-                onChangeText={nextValue => setName(nextValue)}
+                onChangeText={setName}
                 style={{ marginVertical: 5 }}
             />
             <Input
                 value={email}
                 label='Email'
                 placeholder='Enter your email'
-                onChangeText={nextValue => setEmail(nextValue)}
+                onChangeText={setEmail}
                 style={{ marginVertical: 5 }}
             />
             <Input
@@ -39,26 +46,22 @@ const CreateAccount = () => {
                 label='Password'
                 placeholder='Enter your password'
                 secureTextEntry
-                onChangeText={nextValue => setPassword(nextValue)}
+                onChangeText={setPassword}
                 style={{ marginVertical: 5 }}
             />
             <Input
                 value={confirmPassword}
-                label='Confirm Password' 
+                label='Confirm Password'
                 placeholder='Enter your password again'
                 secureTextEntry
-                onChangeText={nextValue => setConfirmPassword(nextValue)} 
+                onChangeText={setConfirmPassword}
                 style={{ marginVertical: 5 }}
             />
-            <Button style={{ marginVertical: 5 }} onPress={handleLogin}>
-                LOGIN
+            <Button style={{ marginVertical: 5 }} onPress={handleCreateAccount}>
+                CREATE ACCOUNT
             </Button>
         </Layout>
     );
 };
 
-export default () => (
-    <ApplicationProvider {...eva} theme={eva.light}>
-        <CreateAccount />
-    </ApplicationProvider>
-);
+export default CreateAccountScreen;
