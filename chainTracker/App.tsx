@@ -14,6 +14,8 @@ const App = () => {
       {/*  toggle between Login and CreateAccount }
       
       // {/*  */}
+      <CreateAccount/>
+      {/* <Login/> */}
 
     </ApplicationProvider>
   );

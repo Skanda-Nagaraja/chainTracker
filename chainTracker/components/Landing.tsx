@@ -1,17 +1,17 @@
-import React from 'react';
-import { ApplicationProvider } from '@ui-kitten/components';
-import * as eva from '@eva-design/eva';
-import Login from './Login';
-import CreateAccount from './CreateAccount';
+// import React from 'react';
+// import { ApplicationProvider } from '@ui-kitten/components';
+// import * as eva from '@eva-design/eva';
+// import Login from './Login';
+// import CreateAccount from './CreateAccount';
 
-const Landing= () => {
+// const Landing= () => {
 
-}
+// }
 
 
-// export default () => (
-//     <ApplicationProvider {...eva} theme={eva.light}>
-//       <Landing />
-//     </ApplicationProvider>
-//   );
+// // export default () => (
+// //     <ApplicationProvider {...eva} theme={eva.light}>
+// //       <Landing />
+// //     </ApplicationProvider>
+// //   );
   

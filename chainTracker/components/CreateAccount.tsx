@@ -3,7 +3,7 @@ import * as eva from '@eva-design/eva';
 import { ApplicationProvider, Layout, Input, Button, Text } from '@ui-kitten/components';
 import { Alert } from 'react-native';
 
-const LoginScreen = () => {
+const CreateAccount = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -23,7 +23,7 @@ const LoginScreen = () => {
             <Input
                 value={name}
                 label='Name'
-                placeholder='name'
+                placeholder='Enter your name'
                 onChangeText={nextValue => setName(nextValue)}
                 style={{ marginVertical: 5 }}
             />
@@ -59,6 +59,6 @@ const LoginScreen = () => {
 
 export default () => (
     <ApplicationProvider {...eva} theme={eva.light}>
-        <LoginScreen />
+        <CreateAccount />
     </ApplicationProvider>
 );
