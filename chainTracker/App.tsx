@@ -12,12 +12,9 @@ const App = () => {
   return (
     <ApplicationProvider {...eva} theme={eva.light}>
       {/*  toggle between Login and CreateAccount }
-      
       // {/*  */}
       <CreateAccount/>
        {/* <Login/>  */}
-
-
     </ApplicationProvider>
   );
 };

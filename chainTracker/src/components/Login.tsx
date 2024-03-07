@@ -13,12 +13,11 @@ const LoginScreen = () => {
   function loginUser(email: string, password: string) {
     signInWithEmailAndPassword(firebaseAuth, email, password)
       .then((userCredential) => {
-        // Handle successful sign in
         const user = userCredential.user;
         console.log("User signed in:", user);
-        Alert.alert( // Using Alert for a more customizable dialog
-        "Login Successful", // Title
-        "You are now signed in!", // Message
+        Alert.alert( 
+        "Login Successful", 
+        "You are now signed in!", 
         [
           {text: "OK", onPress: () => console.log("OK Pressed")}
         ],
@@ -26,7 +25,7 @@ const LoginScreen = () => {
       );
       })
       .catch((error) => {
-        // Handle errors here
+        // Error Handling 
         const errorCode = error.code;
         const errorMessage = error.message;
         console.error("Error signing in:", errorCode, errorMessage);
