@@ -1,8 +1,8 @@
 import React from 'react';
 import { ApplicationProvider } from '@ui-kitten/components';
 import * as eva from '@eva-design/eva';
-import Login from './components/Login';
-import CreateAccount from './components/CreateAccount';
+import Login from './src/components/Login';
+import CreateAccount from './src/components/CreateAccount';
 // import landing from './components/landing'
 
 const App = () => {
@@ -15,7 +15,8 @@ const App = () => {
       
       // {/*  */}
       <CreateAccount/>
-      {/* <Login/> */}
+       {/* <Login/>  */}
+
 
     </ApplicationProvider>
   );
