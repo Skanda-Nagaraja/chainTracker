@@ -19,6 +19,7 @@ const CreateAccountScreen = () => {
         try {
             await createUserWithEmailAndPassword(firebaseAuth, email, password);
             console.log('User account created & signed in!');
+
         } catch (error) {
             console.error('Account creation failed', error);
         }
