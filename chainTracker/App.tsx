@@ -3,6 +3,12 @@ import { ApplicationProvider } from '@ui-kitten/components';
 import * as eva from '@eva-design/eva';
 import Login from './src/components/Login';
 import CreateAccount from './src/components/CreateAccount';
+import {AppRegistry} from 'react-native';
+ // Adjust the path as necessary
+import {name as appName} from './app.json';
+
+AppRegistry.registerComponent(appName, () => Login);
+
 // import landing from './components/landing'
 
 const App = () => {
@@ -13,8 +19,8 @@ const App = () => {
     <ApplicationProvider {...eva} theme={eva.light}>
       {/*  toggle between Login and CreateAccount }
       // {/*  */}
-      <CreateAccount/>
-       {/* <Login/>  */}
+      {/* <CreateAccount/> */}
+       <Login/> 
     </ApplicationProvider>
   );
 };
