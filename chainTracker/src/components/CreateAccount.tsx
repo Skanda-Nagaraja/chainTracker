@@ -58,7 +58,7 @@ const CreateAccountScreen = () => {
                 onChangeText={setConfirmPassword}
                 style={{ marginVertical: 5 }}
             />
-            <Button style={{ marginVertical: 5 }} onPress={handleCreateAccount}>
+            <Button status="primary" style={{ marginVertical: 5 }} onPress={handleCreateAccount}>
                 CREATE ACCOUNT
             </Button>
         </Layout>
